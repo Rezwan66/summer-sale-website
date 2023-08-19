@@ -41,7 +41,7 @@
         </section>
     </header>
     <main>
-        <section class="max-w-screen-xl mx-auto py-6 lg:py-10 mt-6 lg:mt-12">
+        <section class="max-w-screen-xl mx-auto py-6 lg:py-10 mt-6 lg:mt-12 mb-6">
             <h3 class="text-4xl font-semibold mb-6 text-center lg:text-left">Kitchenware</h3>
             <div class="flex flex-col lg:flex-row gap-10 justify-between">
                 <!-- cards container -->
@@ -49,7 +49,7 @@
                     <!-- card container 1 -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <!-- card 1 -->
-                        <div class="card p-5 bg-base-100 shadow-xl">
+                        <div onclick="addProduct(this)" class="card p-5 bg-base-100 shadow-lg hover:shadow-xl hover:cursor-pointer">
                             <figure class="px-10 py-10 bg-[#1111110C] rounded-lg">
                                 <img src="./images/prod1.png" alt="Shoes" class="" />
                             </figure>
@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <!-- card 2 -->
-                        <div class="card p-5 bg-base-100 shadow-xl">
+                        <div onclick="addProduct(this)" class="card p-5 bg-base-100 shadow-lg hover:shadow-xl hover:cursor-pointer">
                             <figure class="px-10 py-10 bg-[#1111110C] rounded-lg">
                                 <img src="./images/prod2.png" alt="Shoes" class="" />
                             </figure>
@@ -85,7 +85,7 @@
                             </div>
                         </div>
                         <!-- card 3 -->
-                        <div class="card p-5 bg-base-100 shadow-xl">
+                        <div onclick="addProduct(this)" class="card p-5 bg-base-100 shadow-lg hover:shadow-xl hover:cursor-pointer">
                             <figure class="px-10 py-10 bg-[#1111110C] rounded-lg">
                                 <img src="./images/prod3.png" alt="Shoes" class="" />
                             </figure>
@@ -107,7 +107,7 @@
                     <!-- card container 2 -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <!-- card 4 -->
-                        <div class="card p-5 bg-base-100 shadow-xl">
+                        <div onclick="addProduct(this)" class="card p-5 bg-base-100 shadow-lg hover:shadow-xl hover:cursor-pointer">
                             <figure class="px-10 py-10 bg-[#1111110C] rounded-lg">
                                 <img src="./images/prod4.png" alt="Shoes" class="" />
                             </figure>
@@ -125,7 +125,7 @@
                             </div>
                         </div>
                         <!-- card 5 -->
-                        <div class="card p-5 bg-base-100 shadow-xl">
+                        <div onclick="addProduct(this)" class="card p-5 bg-base-100 shadow-lg hover:shadow-xl hover:cursor-pointer">
                             <figure class="px-10 py-10 bg-[#1111110C] rounded-lg">
                                 <img src="./images/prod5.png" alt="Shoes" class="" />
                             </figure>
@@ -143,7 +143,7 @@
                             </div>
                         </div>
                         <!-- card 6 -->
-                        <div class="card p-5 bg-base-100 shadow-xl">
+                        <div onclick="addProduct(this)" class="card p-5 bg-base-100 shadow-lg hover:shadow-xl hover:cursor-pointer">
                             <figure class="px-10 py-10 bg-[#1111110C] rounded-lg">
                                 <img src="./images/prod6.png" alt="Shoes" class="" />
                             </figure>
@@ -165,31 +165,30 @@
                 <!-- carts container -->
                 <div class="text-center lg:text-left">
                     <!-- apply coupon card -->
-                    <div class="card p-6 bg-base-100 shadow-xl mb-6">
+                    <div class="card p-6 bg-base-100 shadow-lg mb-6">
                         <h3 class="text-2xl font-medium">Have coupon?</h3>
                         <div class="join mx-auto">
                             <input class="input input-bordered join-item" placeholder="Coupon code" />
-                            <button class="btn btn-secondary join-item capitalize text-white">Apply</button>
+                            <button disabled class="btn btn-secondary join-item capitalize text-white disabled:bg-pink-300">Apply</button>
                         </div>
                     </div>
                     <!-- total selected items and checkout card -->
-                    <div class="card p-6 bg-base-100 shadow-xl">
+                    <div class="card p-6 bg-base-100 shadow-lg">
                         <!-- add items empty div -->
-                        <div>
+                        <div id="add-name-to-cart">
 
                         </div>
                         <br>
                         <hr><br>
                         <h3 class="text-2xl font-medium">Total Price: <span
-                                class="text-[#1111117F]"><span>00.00</span>TK</span></h3>
+                                class="text-[#1111117F]"><span id="previous-total-price">00.00</span>TK</span></h3>
                         <h3 class="text-2xl font-medium">Discount: <span
-                                class="text-[#1111117F]"><span>00.00</span>TK</span></h3>
+                                class="text-[#1111117F]"><span id="discount-amount">00.00</span>TK</span></h3>
                         <h3 class="text-2xl font-medium">Total: <span
-                                class="text-[#1111117F]"><span>00.00</span>TK</span></h3>
+                                class="text-[#1111117F]"><span id="total-after-discount">00.00</span>TK</span></h3>
                         <br>
                         <hr><br>
-                        <button onclick="my_modal_1.showModal();"
-                            class="btn btn-secondary join-item capitalize text-white">Make Purchase</button>
+                        <button id="btn-purchase" onclick="my_modal_1.showModal();" disabled class="btn btn-secondary join-item capitalize text-white disabled:bg-pink-300">Make Purchase</button>
                         <!-- modal -->
                         <dialog id="my_modal_1" class="modal">
                             <form method="dialog" class="modal-box max-h-[600px] text-center">
@@ -207,6 +206,7 @@
             </div>
         </section>
     </main>
+    <script src="index.js"></script>
 </body>
 
 </html>
