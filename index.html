@@ -178,12 +178,30 @@
                         <div>
 
                         </div>
-                        <br><hr><br>
-                        <h3 class="text-2xl font-medium">Total Price: <span class="text-[#1111117F]"><span>00.00</span>TK</span></h3>
-                        <h3 class="text-2xl font-medium">Discount: <span class="text-[#1111117F]"><span>00.00</span>TK</span></h3>
-                        <h3 class="text-2xl font-medium">Total: <span class="text-[#1111117F]"><span>00.00</span>TK</span></h3>
-                        <br><hr><br>
-                        <button class="btn btn-secondary join-item capitalize text-white">Make Purchase</button>
+                        <br>
+                        <hr><br>
+                        <h3 class="text-2xl font-medium">Total Price: <span
+                                class="text-[#1111117F]"><span>00.00</span>TK</span></h3>
+                        <h3 class="text-2xl font-medium">Discount: <span
+                                class="text-[#1111117F]"><span>00.00</span>TK</span></h3>
+                        <h3 class="text-2xl font-medium">Total: <span
+                                class="text-[#1111117F]"><span>00.00</span>TK</span></h3>
+                        <br>
+                        <hr><br>
+                        <button onclick="my_modal_1.showModal();"
+                            class="btn btn-secondary join-item capitalize text-white">Make Purchase</button>
+                        <!-- modal -->
+                        <dialog id="my_modal_1" class="modal">
+                            <form method="dialog" class="modal-box max-h-[600px] text-center">
+                                <img src="./images/congo.png" alt="" class="mx-auto">
+                                <h3 class="font-bold text-lg">Congratulations</h3>
+                                <p class="py-4">You have purchased the product</p>
+                                <div class="">
+                                    <!-- if there is a button in form, it will close the modal -->
+                                    <button class="btn btn-secondary capitalize text-white">Go Home</button>
+                                </div>
+                            </form>
+                        </dialog>
                     </div>
                 </div>
             </div>
