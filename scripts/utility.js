@@ -24,9 +24,3 @@ function addNameToCart(name){
     `
     addItemsDiv.appendChild(p);
 }
-
-function getProductPrice(target){
-    const productPriceString = target.childNodes[3].childNodes[5].childNodes[0].innerText;
-    const productPrice = parseFloat(productPriceString);
-    return productPrice;
-}
