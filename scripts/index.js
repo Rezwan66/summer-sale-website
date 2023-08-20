@@ -12,7 +12,8 @@ function addProduct(target) {
     totalPrice += productPrice;
     totalAfterDiscount = totalPrice - discountAmount;
     // applyDiscount();
-
+    setElementValue('previous-total-price', totalPrice.toFixed(2));
+    setElementValue('total-after-discount', totalAfterDiscount.toFixed(2));
     // enable make purchase button
     if (totalPrice > 0) {
         document.getElementById('btn-purchase').removeAttribute('disabled');
@@ -21,9 +22,17 @@ function addProduct(target) {
     if (totalPrice >= 200) {
         document.getElementById('btn-apply').removeAttribute('disabled');
     }
+    const couponCodeString = document.getElementById('input-coupon-code').value;
+    if (couponCodeString === 'SELL200') {
+        const totalPriceValue = getElementValue('previous-total-price');
+        const newDiscountValue = totalPriceValue * 0.2;
+        const totalAfterDiscount = totalPriceValue-newDiscountValue;
+        setElementValue('previous-total-price', totalPriceValue.toFixed(2));
+        setElementValue('discount-amount',newDiscountValue.toFixed(2));
+        setElementValue('total-after-discount', totalAfterDiscount.toFixed(2));
+    }
 
-    setElementValue('previous-total-price', totalPrice.toFixed(2));
-    setElementValue('total-after-discount', totalAfterDiscount.toFixed(2));
+
 
     // add product name to cart
     const productNameString = target.childNodes[3].childNodes[3].innerText;
@@ -48,6 +57,11 @@ function applyDiscount() {
         const discountTwenty = totalPrice * 0.2;
         totalAfterDiscount = totalPrice - discountTwenty;
         setElementValue('discount-amount', discountTwenty.toFixed(2));
-        setElementValue('total-after-discount',totalAfterDiscount.toFixed(2));
+        setElementValue('total-after-discount', totalAfterDiscount.toFixed(2));
     }
+}
+
+// Clear cart using the go home button in the modal
+function clearCart() {
+    window.location.reload();
 }
