@@ -31,7 +31,7 @@
                 <h1 class="mb-16 text-3xl lg:text-5xl font-bold">Purchase TK 200 or<br>above & get <span
                         class="text-[#E527B2]">20% off</span></h1><br>
                 <label for="" class="text-xl font-medium">Use Promo Code
-                    <button class="btn btn-secondary uppercase text-white">SELL200</button>
+                    <button onclick="clickToAddCoupon(this)" class="btn btn-secondary uppercase text-white">SELL200</button>
                 </label>
             </div>
             <!-- banner image -->
@@ -80,7 +80,7 @@
                                     <input type="radio" name="rating-3" class="mask mask-star-2 bg-orange-400" />
                                     <input type="radio" name="rating-3" class="mask mask-star-2 bg-orange-400" />
                                 </div>
-                                <h2 class="card-title">K. Accessories</h2>
+                                <h2 class="card-title">K. Set</h2>
                                 <p><span>25.00</span> TK</p>
                             </div>
                         </div>
@@ -168,8 +168,8 @@
                     <div class="card p-6 bg-base-100 shadow-lg mb-6">
                         <h3 class="text-2xl font-medium">Have coupon?</h3>
                         <div class="join mx-auto">
-                            <input class="input input-bordered join-item" placeholder="Coupon code" />
-                            <button disabled class="btn btn-secondary join-item capitalize text-white disabled:bg-pink-300">Apply</button>
+                            <input id="input-coupon-code" onkeyup="enableApplyButton(this)" onfocus="enableApplyButton(this)" class="input input-bordered join-item focus:outline-none" placeholder="Coupon code" />
+                            <button id="btn-apply" disabled class="btn btn-secondary join-item capitalize text-white disabled:bg-pink-300">Apply</button>
                         </div>
                     </div>
                     <!-- total selected items and checkout card -->
@@ -206,7 +206,8 @@
             </div>
         </section>
     </main>
-    <script src="index.js"></script>
+    <script src="./scripts/utility.js"></script>
+    <script src="./scripts/index.js"></script>
 </body>
 
 </html>
