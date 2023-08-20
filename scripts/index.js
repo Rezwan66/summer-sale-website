@@ -12,8 +12,13 @@ function addProduct(target){
     totalPrice += productPrice;
     totalAfterDiscount = totalPrice - discountAmount;
 
+    // enable make purchase button
     if(totalPrice>0){
         document.getElementById('btn-purchase').removeAttribute('disabled');
+    }
+    // enable apply button
+    if(totalPrice>=200){
+        document.getElementById('btn-apply').removeAttribute('disabled');
     }
 
     setElementValue('previous-total-price',totalPrice.toFixed(2));
@@ -23,24 +28,13 @@ function addProduct(target){
     const productNameString = target.childNodes[3].childNodes[3].innerText;
     addNameToCart(productNameString);
 }
-
+/* 
 // click SELL200 button to add the code to the input field
 function clickToAddCoupon(target){
     const couponCodeString = target.innerText;
     const inputCouponField = document.getElementById('input-coupon-code');
     inputCouponField.value = couponCodeString;
-
-    const applyButton = document.getElementById('btn-apply');
-    applyButton.removeAttribute('disabled');
 }
-// click on SELL200 button or type the code to enable the apply button
-function enableApplyButton(target){
-    const couponCodeString = target.value;
-    const applyButton = document.getElementById('btn-apply');
+ */
 
-    if(couponCodeString === 'SELL200'){
-        applyButton.removeAttribute('disabled');
-    }else{
-        applyButton.setAttribute('disabled',true);
-    }
-}
+// Apply 20% discount by clicking the apply button
