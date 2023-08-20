@@ -29,6 +29,9 @@ function clickToAddCoupon(target){
     const couponCodeString = target.innerText;
     const inputCouponField = document.getElementById('input-coupon-code');
     inputCouponField.value = couponCodeString;
+
+    const applyButton = document.getElementById('btn-apply');
+    applyButton.removeAttribute('disabled');
 }
 // click on SELL200 button or type the code to enable the apply button
 function enableApplyButton(target){
