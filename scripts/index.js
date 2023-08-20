@@ -50,6 +50,8 @@ function clickToAddCoupon(target){
 // Apply 20% discount by clicking the apply button
 function applyDiscount() {
     const couponCodeString = document.getElementById('input-coupon-code').value;
+    const alertMessageFalse = document.getElementById('alert-msg-false');
+    const alertMessageTrue = document.getElementById('alert-msg-true');
     // const productPrice = getProductPrice()
     if (couponCodeString === 'SELL200') {
         let totalPrice = getElementValue('previous-total-price');
@@ -58,6 +60,11 @@ function applyDiscount() {
         totalAfterDiscount = totalPrice - discountTwenty;
         setElementValue('discount-amount', discountTwenty.toFixed(2));
         setElementValue('total-after-discount', totalAfterDiscount.toFixed(2));
+        alertMessageFalse.classList.add('hidden');
+        alertMessageTrue.classList.remove('hidden');
+    }else{
+        alertMessageFalse.classList.remove('hidden');
+        alertMessageTrue.classList.add('hidden');
     }
 }
 
