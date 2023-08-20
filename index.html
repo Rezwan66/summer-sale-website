@@ -49,7 +49,7 @@
                     <!-- card container 1 -->
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <!-- card 1 -->
-                        <div onclick="addProduct(this)"
+                        <div onclick="addProduct(this);getProductPrice(this)"
                             class="card p-5 bg-base-100 shadow-lg hover:shadow-xl hover:cursor-pointer">
                             <figure class="px-10 py-10 bg-[#1111110C] rounded-lg">
                                 <img src="./images/prod1.png" alt="Shoes" class="" />
@@ -174,9 +174,8 @@
                     <div class="card p-6 bg-base-100 shadow-lg mb-6">
                         <h3 class="text-2xl font-medium">Have coupon?</h3>
                         <div class="join mx-auto">
-                            <input id="input-coupon-code" onkeyup="enableApplyButton(this)"
-                                class="input input-bordered join-item focus:outline-none" placeholder="Coupon code" />
-                            <button id="btn-apply" disabled
+                            <input id="input-coupon-code" class="input input-bordered join-item focus:outline-none" placeholder="Coupon code" />
+                            <button onclick="applyDiscount()" id="btn-apply" disabled
                                 class="btn btn-secondary join-item capitalize text-white disabled:bg-pink-300">Apply</button>
                         </div>
                     </div>
